@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kampot Road Trip Retreats & Stays (Editorial Scrolling)</title>
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matcha: {
+              light: '#E2F3CB',
+              DEFAULT: '#BEE38B',
+              dark: '#9AC662',
+            },
+            terracotta: {
+              DEFAULT: '#FA6D53',
+              hover: '#E5583E',
+              soft: '#FDECE8',
+            },
+            sand: {
+              50: '#FDFBF7',
+              100: '#FAF5ED',
+              200: '#F3ECE0',
+            },
+            dark: {
+              DEFAULT: '#191C21',
+              muted: '#5A6068',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'card': '0 8px 24px rgba(25, 28, 33, 0.06)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      color: #191c21;
+      background-color: #fdfbf7;
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fdfbf7;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #dcd4c3;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #fa6d53;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#FDFBF7] text-[#191C21] relative overflow-x-hidden selection:bg-matcha selection:text-[#191C21]">
+
+  <!-- Top Left / Center Matcha Green Wave -->
+  <div class="absolute top-0 left-0 w-full pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+    <svg viewBox="0 0 1440 680" fill="none" class="w-full h-auto min-h-[380px] max-h-[580px] object-cover">
+      <path 
+        d="M0 0 H1440 V240 C1280 340, 1140 220, 940 280 C740 340, 680 520, 420 540 C200 560, 80 440, 0 490 Z" 
+        fill="#BEE38B" 
+        opacity="0.85"
+      />
+    </svg>
+  </div>
+
+  <!-- Mid-Right Matcha Accent Wave -->
+  <div class="absolute top-[1350px] right-0 w-[420px] h-[580px] pointer-events-none z-0 overflow-hidden hidden lg:block" aria-hidden="true">
+    <svg viewBox="0 0 420 580" fill="none" class="w-full h-full">
+      <path 
+        d="M420 0 C240 80, 120 220, 180 380 C240 540, 360 520, 420 580 Z" 
+        fill="#BEE38B" 
+        opacity="0.75"
+      />
+    </svg>
+  </div>
+
+  <!-- Bottom Wave -->
+  <div class="absolute bottom-0 left-0 w-full pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+    <svg viewBox="0 0 1440 420" fill="none" class="w-full h-auto object-cover">
+      <path 
+        d="M0 240 C320 180, 580 380, 920 280 C1160 210, 1340 320, 1440 260 V420 H0 Z" 
+        fill="#BEE38B" 
+        opacity="0.7"
+      />
+    </svg>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="relative z-20 max-w-7xl mx-auto px-6 sm:px-10 py-6 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full bg-[#191C21] text-white flex items-center justify-center font-serif font-bold text-lg shadow-sm">
+        KT
+      </div>
+      <div class="hidden sm:block">
+        <span class="font-serif font-bold text-lg tracking-tight block leading-tight">Kampot Trip</span>
+        <span class="text-[11px] font-semibold text-dark-muted tracking-wider uppercase">Creek & Beach 2026</span>
+      </div>
+    </div>
+
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-[#191C21]/90">
+      <a href="#overview" class="hover:text-terracotta transition-colors">Overview</a>
+      <a href="#stays" class="hover:text-terracotta transition-colors">Accommodations</a>
+      <a href="#comparison" class="hover:text-terracotta transition-colors">Comparison</a>
+      <a href="#leaderboard" class="hover:text-terracotta transition-colors">Crew Poll</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="#stays" class="bg-white/90 hover:bg-white text-[#191C21] border border-[#191C21]/20 font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full shadow-sm">
+        Review Stays (3)
+      </a>
+      <a href="#leaderboard" class="bg-terracotta hover:bg-terracotta-hover text-white font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-full shadow-sm">
+        Vote Now 🗳️
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="overview" class="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 pt-10 pb-20 sm:pb-32">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <div class="lg:col-span-5 space-y-6">
+        <div class="inline-flex items-center gap-2 bg-white/80 border border-[#191C21]/15 px-4 py-1 rounded-full text-xs font-semibold text-[#191C21] shadow-sm">
+          <span className="w-2 h-2 rounded-full bg-terracotta animate-pulse"></span>
+          <span>Weekend Road Trip Planning</span>
+        </div>
+
+        <h1 class="font-serif font-bold text-5xl sm:text-6xl md:text-7xl text-[#191C21] tracking-tight leading-[1.08]">
+          Rest &<br>
+          Recharge<br>
+          <span class="italic font-normal">in Kampot</span>
+        </h1>
+
+        <p class="text-[#191C21]/80 text-base sm:text-lg leading-relaxed max-w-md font-normal">
+          Compare handpicked riverside homestays, private creek houses, and coastal residences. Relax by the flowing water, light the evening BBQ, and vote together with the travel crew.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4 pt-2">
+          <a href="#stays" class="bg-terracotta hover:bg-terracotta-hover text-white font-semibold text-sm px-8 py-3.5 rounded-full shadow-md">
+            Explore Stays ↓
+          </a>
+          <a href="#comparison" class="bg-white/90 hover:bg-white text-[#191C21] border border-[#191C21]/20 font-semibold text-sm px-7 py-3.5 rounded-full shadow-sm">
+            Compare Side-by-Side
+          </a>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-[#191C21]/10 text-xs sm:text-sm">
+          <div>
+            <span class="block font-bold text-xl sm:text-2xl text-[#191C21] font-serif">3</span>
+            <span class="text-dark-muted font-medium">Curated Stays</span>
+          </div>
+          <div>
+            <span class="block font-bold text-xl sm:text-2xl text-[#191C21] font-serif">6–8</span>
+            <span class="text-dark-muted font-medium">Adventurers</span>
+          </div>
+          <div>
+            <span class="block font-bold text-xl sm:text-2xl text-[#191C21] font-serif">FREE</span>
+            <span class="text-dark-muted font-medium">BBQ Options</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Hero Illustration (Architectural House Line-Art) -->
+      <div class="lg:col-span-7 relative flex justify-center">
+        <div class="relative w-full max-w-lg lg:max-w-xl">
+          <svg viewBox="0 0 600 500" fill="none" class="w-full h-auto drop-shadow-sm">
+            <polygon points="120,380 320,440 540,350 340,300" fill="#FFFFFF" stroke="#191C21" stroke-width="3" stroke-linejoin="round"/>
+            <polygon points="110,400 160,415 160,425 110,410" fill="#FDFBF7" stroke="#191C21" stroke-width="2.5"/>
+            <polygon points="125,418 175,433 175,443 125,428" fill="#FDFBF7" stroke="#191C21" stroke-width="2.5"/>
+            
+            <polygon points="200,160 380,110 520,170 340,230" fill="#FFFFFF" stroke="#191C21" stroke-width="3" stroke-linejoin="round"/>
+            <polygon points="200,160 340,230 340,370 200,290" fill="#FFFFFF" stroke="#191C21" stroke-width="3" stroke-linejoin="round"/>
+            <polygon points="340,230 520,170 520,300 340,370" fill="#FBF7EE" stroke="#191C21" stroke-width="3" stroke-linejoin="round"/>
+            <polygon points="170,150 380,90 550,160 340,230" fill="#FFFFFF" stroke="#191C21" stroke-width="3.5" stroke-linejoin="round"/>
+
+            <polygon points="230,210 320,250 320,350 230,300" fill="#F6EFE3" stroke="#191C21" stroke-width="2.5" stroke-linejoin="round"/>
+            <polygon points="275,230 320,250 320,350 275,325" fill="#E8DCC8" stroke="#191C21" stroke-width="2"/>
+            <rect x="245" y="270" width="20" height="24" rx="3" fill="#FA6D53" stroke="#191C21" stroke-width="1.5"/>
+            <circle cx="280" cy="275" r="8" fill="#BEE38B" stroke="#191C21" stroke-width="1.5"/>
+
+            <polygon points="370,230 430,205 430,260 370,285" fill="#FFFFFF" stroke="#191C21" stroke-width="2.5"/>
+            <polygon points="450,195 500,175 500,230 450,250" fill="#FFFFFF" stroke="#191C21" stroke-width="2.5"/>
+
+            <ellipse cx="250" cy="360" rx="30" ry="16" fill="#FDFBF7" stroke="#191C21" stroke-width="2.5"/>
+            <circle cx="245" cy="335" r="9" fill="#FA6D53" stroke="#191C21" stroke-width="2"/>
+            <path d="M245 344 C245 355, 255 365, 265 365" stroke="#191C21" stroke-width="3" stroke-linecap="round"/>
+
+            <path d="M140 280 Q170 230 200 240 Q180 270 140 280 Z" fill="#4E8C5A" stroke="#191C21" stroke-width="2.5"/>
+            <path d="M150 290 Q120 220 150 200 Q170 250 150 290 Z" fill="#65A66E" stroke="#191C21" stroke-width="2.5"/>
+
+            <polygon points="460,370 480,370 475,410 465,410" fill="#FA6D53" stroke="#191C21" stroke-width="2.5"/>
+            <path d="M470 370 Q430 330 450 290 Q490 320 470 370 Z" fill="#4E8C5A" stroke="#191C21" stroke-width="2.5"/>
+            <path d="M470 370 Q510 320 520 280 Q480 310 470 370 Z" fill="#65A66E" stroke="#191C21" stroke-width="2.5"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- CONTINUOUS SCROLLING STAYS SHOWCASE -->
+  <section id="stays" class="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 py-16">
+    <div class="mb-12">
+      <div class="inline-block text-xs font-bold uppercase tracking-widest text-dark-muted mb-2">
+        Detailed Accommodation Guide
+      </div>
+      <h2 class="font-serif font-bold text-3xl sm:text-5xl text-[#191C21]">
+        Our 3 Choices for Kampot
+      </h2>
+      <p class="text-dark-muted text-sm sm:text-base max-w-2xl mt-2">
+        Scroll down to review each location, pricing breakdown, BBQ perks, bed counts, and watch video tours on TikTok before voting.
+      </p>
+    </div>
+
+    <div class="space-y-16 sm:space-y-24" id="staysListContainer"></div>
+  </section>
+
+
+
+  <!-- COMPARISON TABLE -->
+  <section id="comparison" class="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 py-16">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <h2 class="font-serif font-bold text-3xl sm:text-4xl text-[#191C21] mb-2">Side-by-Side Comparison</h2>
+      <p class="text-dark-muted text-sm">Everything at a glance to make picking our spot seamless.</p>
+    </div>
+
+    <div class="overflow-x-auto bg-white rounded-3xl border border-[#191C21]/15 shadow-sm p-6" id="comparisonTableContainer"></div>
+  </section>
+
+  <!-- CREW POLL LEADERBOARD -->
+  <section id="leaderboard" class="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 py-16">
+    <div class="bg-[#FAF5ED] rounded-3xl p-8 sm:p-12 border border-[#191C21]/15 shadow-sm">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+        <div class="max-w-2xl">
+          <div class="inline-block bg-white border border-[#191C21]/15 px-3.5 py-1 rounded-full text-xs font-bold text-[#191C21] mb-2">
+            🗳️ Travel Crew Decision Poll
+          </div>
+          <h2 class="font-serif font-bold text-3xl sm:text-4xl text-[#191C21]">Live Voting Leaderboard</h2>
+          <p class="text-dark-muted text-sm mt-1">Every member of our trip gets to vote for their favorite place. The top choice wins!</p>
+        </div>
+
+        <div id="cloudSyncBadgeContainer" class="shrink-0"></div>
+      </div>
+
+      <div class="space-y-4" id="leaderboardList"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative z-10 pt-16 pb-12 text-center text-xs sm:text-sm text-[#191C21]">
+    <div class="max-w-xl mx-auto px-6 space-y-4">
+      <div class="w-10 h-10 rounded-full bg-[#191C21] text-white flex items-center justify-center font-serif font-bold text-lg mx-auto shadow-sm">KT</div>
+      <h3 class="font-serif font-bold text-2xl text-[#191C21]">Ready to book our Kampot retreat?</h3>
+      <p class="text-dark-muted text-xs leading-relaxed">Download our complete stay summary or copy the link to share with everyone in the road trip group.</p>
+      <div class="flex flex-wrap justify-center gap-3 pt-2 font-semibold">
+        <button id="btnDownload" class="bg-terracotta hover:bg-terracotta-hover text-white px-6 py-2.5 rounded-full shadow-sm text-xs">
+          📥 Download Summary (.txt)
+        </button>
+        <button id="btnCopyShare" class="bg-white hover:bg-[#FAF5ED] text-[#191C21] border border-[#191C21]/20 px-6 py-2.5 rounded-full shadow-sm text-xs">
+          🔗 Copy Share Link
+        </button>
+      </div>
+      <div class="text-[11px] text-dark-muted/80 pt-6">
+        Kampot Road Trip 2026 · Smooth scrolling architectural layout
+      </div>
+    </div>
+  </footer>
+
+  <!-- Firebase Cloud Sync Modal -->
+  <div id="cloudModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 border border-[#191C21]/15 shadow-2xl relative">
+      <button onclick="closeCloudModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-[#FAF5ED] text-[#191C21] font-bold flex items-center justify-center hover:bg-terracotta hover:text-white transition-colors text-sm">
+        ✕
+      </button>
+
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 rounded-2xl bg-matcha-light flex items-center justify-center text-xl">
+          ☁️
+        </div>
+        <div>
+          <h3 class="font-serif font-bold text-xl text-[#191C21]">Firebase Realtime Sync</h3>
+          <p class="text-xs text-dark-muted">Live synchronization across all phones & devices</p>
+        </div>
+      </div>
+
+      <p class="text-xs text-dark-muted leading-relaxed mb-4">
+        When connected, anyone who opens your website link on their phone will see votes update live across all screens instantly.
+      </p>
+
+      <div class="bg-[#FAF5ED] rounded-2xl p-4 border border-[#191C21]/10 text-xs text-[#191C21] space-y-2 mb-4">
+        <p class="font-bold text-[#191C21]">📋 How to get your free database in 1 minute:</p>
+        <ol class="list-decimal list-inside space-y-1 text-dark-muted">
+          <li>Go to <a href="https://console.firebase.google.com" target="_blank" class="text-terracotta underline font-semibold">console.firebase.google.com</a> &amp; click <strong>Add Project</strong>.</li>
+          <li>In the left menu, click <strong>Build &gt; Realtime Database</strong>.</li>
+          <li>Click <strong>Create Database</strong>, select <strong>Start in Test Mode</strong>, and copy your Database URL.</li>
+        </ol>
+      </div>
+
+      <div class="space-y-3">
+        <label class="block text-xs font-bold text-[#191C21]">
+          Firebase Database URL:
+        </label>
+        <input 
+          id="cloudDbUrlInput"
+          type="url"
+          placeholder="https://your-project-default-rtdb.firebaseio.com"
+          class="w-full text-xs px-4 py-3 rounded-xl border border-[#191C21]/20 focus:outline-none focus:border-terracotta focus:ring-1 focus:ring-terracotta bg-[#FDFBF7]"
+        />
+
+        <div class="flex gap-2 pt-2">
+          <button onclick="saveCloudUrl()" class="flex-1 bg-terracotta hover:bg-terracotta-hover text-white font-bold py-2.5 rounded-full text-xs shadow-sm transition-all">
+            Save &amp; Connect Live
+          </button>
+          <button id="btnDisconnectCloud" onclick="disconnectCloudUrl()" class="hidden px-4 py-2.5 rounded-full border border-red-200 text-red-600 hover:bg-red-50 text-xs font-semibold transition-all">
+            Disconnect
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-[#191C21] text-white px-6 py-2.5 rounded-full text-xs font-bold shadow-xl transition-all duration-300 pointer-events-none z-50 translate-y-16 opacity-0"></div>
+
+  <!-- Client Application Logic -->
+  <script>
+    const STAYS = [
+      {
+        id: 'mr-pho',
+        name: 'Mr Pho Homestay',
+        categoryLabel: 'Creek Homestay',
+        tag: 'Near the Creek · Budget Hero',
+        tiktok: '@mrphohomestay',
+        tiktokUrl: 'https://www.tiktok.com/search?q=Mr+Pho+Homestay+Kampot',
+        rating: 4.88,
+        reviews: 42,
+        location: 'Near the Creek · Kampot Riverside',
+        price: 55,
+        unitNote: '/ night',
+        bbqText: '🔥 BBQ grill + coal: $5',
+        totalWithBbq: '$60 total with BBQ',
+        hasFreeBbq: false,
+        capacity: '6–8 People',
+        beds: '3 Beds',
+        rooms: 'Modern White Cabins & Villa by Pool',
+        description: 'A stylish white retreat near the Kampot creek featuring glass-front chalets, outdoor swimming pool & plunge bath, spacious courtyard, and evening BBQ setups under the open sky.',
+        highlights: ['Outdoor Swimming Pool', 'Glass-Front Cabins & Villa', 'Near the Creek', 'Super Budget Friendly ($55)'],
+        image: './mr-pho-homestay.png',
+        votes: 0,
+        voted: false
+      },
+      {
+        id: 'pteas-phae',
+        name: 'Pteas Phae Private',
+        categoryLabel: 'Private Creek House',
+        tag: 'Entire Creek House · Free BBQ',
+        tiktok: '@pteasphaeprivate',
+        tiktokUrl: 'https://www.tiktok.com/search?q=Pteas+Phae+Kampot',
+        rating: 4.95,
+        reviews: 36,
+        location: 'Near the Creek · Kampot',
+        price: 85,
+        unitNote: '/ night',
+        bbqText: '🔥 BBQ grill: FREE',
+        totalWithBbq: '$85 (BBQ Included FREE)',
+        hasFreeBbq: true,
+        capacity: '6–8 People (Flexible)',
+        beds: '3 Beds',
+        rooms: '2 Private Rooms (Direct Deck Access)',
+        description: 'An exclusive private waterside sanctuary nestled right on the creek. Features floor-to-ceiling sliding glass doors opening directly onto a private riverfront deck, 2 complete rooms, 3 beds, and a complimentary barbecue grill ready for cooking.',
+        highlights: ['100% Free BBQ Grill', 'Floor-to-Ceiling Creek Deck View', '2 Private Rooms · 3 Beds', 'Complete Group Privacy'],
+        image: './pteas-phae.png',
+        votes: 0,
+        voted: false
+      },
+      {
+        id: 'nana-sky',
+        name: 'Nana Sky Kampot Residence',
+        categoryLabel: 'Coastal Sky Residence',
+        tag: 'Near the Beach · Panoramic Sky',
+        tiktok: '@nanaskykampot',
+        tiktokUrl: 'https://www.tiktok.com/search?q=Nana+Sky+Kampot+Residence',
+        rating: 4.92,
+        reviews: 51,
+        location: 'Near the Beach · Kampot Coastal Area',
+        price: 108,
+        unitNote: '$54/room × 2 rooms',
+        bbqText: '🔥 BBQ grill: FREE',
+        totalWithBbq: '$108 for 2 rooms',
+        hasFreeBbq: true,
+        capacity: 'Up to 6 People',
+        beds: '2 Beds (+ Extra Mattress $10/set)',
+        rooms: '2 Interconnected Rooms (Warm Timber & Balcony)',
+        description: 'A charming 2-story yellow villa residence featuring illuminated evening verandas, polished wood ceilings, warm timber bedrooms, air conditioning, and a free BBQ grill near the beach.',
+        highlights: ['Free BBQ Grill', 'Warm Wooden Ceilings & Floors', 'Close to Kampot Beach', 'Extra Mattress Available ($10)'],
+        image: './nana-sky.jpg',
+        votes: 0,
+        voted: false
+      }
+    ];
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.remove('translate-y-16', 'opacity-0');
+      setTimeout(() => toast.classList.add('translate-y-16', 'opacity-0'), 3000);
+    }
+
+    function renderStays() {
+      const container = document.getElementById('staysListContainer');
+      container.innerHTML = STAYS.map((stay, index) => `
+        <article id="${stay.id}" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white p-6 sm:p-10 rounded-3xl border border-[#191C21]/15 shadow-sm hover:shadow-card transition-all">
+          <div class="lg:col-span-6 relative ${index % 2 === 1 ? 'lg:order-2' : ''}">
+            <div class="relative h-[320px] sm:h-[400px] rounded-2xl overflow-hidden shadow-sm group">
+              <img src="${stay.image}" alt="${stay.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+              <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm border border-[#191C21]/15 px-4 py-1.5 rounded-full text-xs font-bold text-[#191C21]">
+                ${stay.categoryLabel}
+              </div>
+              <div class="absolute top-4 right-4 bg-[#FAF5ED] border border-[#191C21]/15 px-3 py-1 rounded-full text-xs font-extrabold text-[#191C21]">
+                ★ ${stay.rating} (${stay.reviews})
+              </div>
+              <a href="${stay.tiktokUrl}" target="_blank" class="absolute bottom-4 left-4 bg-[#191C21]/90 hover:bg-[#191C21] text-white px-4 py-2 rounded-full text-xs font-bold inline-flex items-center gap-2 shadow-md">
+                <span>Watch ${stay.tiktok} on TikTok ↗</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 space-y-5 ${index % 2 === 1 ? 'lg:order-1' : ''}">
+            <div class="space-y-1">
+              <div class="text-xs font-bold uppercase tracking-wider text-terracotta">${stay.tag}</div>
+              <h3 class="font-serif font-bold text-3xl sm:text-4xl text-[#191C21]">${stay.name}</h3>
+              <div class="text-xs sm:text-sm text-dark-muted font-medium flex items-center gap-1.5 pt-1">
+                <span>📍</span> ${stay.location}
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl border flex items-center justify-between ${stay.hasFreeBbq ? 'bg-[#BEE38B]/25 border-[#9AC662]' : 'bg-terracotta-soft border-terracotta/30'}">
+              <div>
+                <span class="font-bold text-sm block">${stay.bbqText}</span>
+                <span class="text-xs opacity-80">${stay.totalWithBbq}</span>
+              </div>
+              <span class="text-xl">${stay.hasFreeBbq ? '🎁' : '🥩'}</span>
+            </div>
+
+            <div class="flex flex-wrap gap-2 text-xs font-semibold text-[#191C21]">
+              <span class="bg-[#FAF5ED] border border-[#191C21]/15 px-3 py-1 rounded-full">👥 ${stay.capacity}</span>
+              <span class="bg-[#FAF5ED] border border-[#191C21]/15 px-3 py-1 rounded-full">🛏️ ${stay.beds}</span>
+              <span class="bg-[#FAF5ED] border border-[#191C21]/15 px-3 py-1 rounded-full">🏠 ${stay.rooms}</span>
+            </div>
+
+            <p class="text-[#191C21]/80 text-sm leading-relaxed">${stay.description}</p>
+
+            <div class="grid grid-cols-2 gap-2 pt-1">
+              ${stay.highlights.map(h => `<div class="text-xs font-medium text-[#191C21]/90 flex items-center gap-1.5"><span class="text-matcha-dark font-bold">✓</span> ${h}</div>`).join('')}
+            </div>
+
+            <div class="pt-5 border-t border-[#191C21]/10 flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <div class="flex items-baseline gap-1">
+                  <span class="font-serif font-bold text-3xl text-[#191C21]">$${stay.price}</span>
+                  <span class="text-xs text-dark-muted font-medium">${stay.unitNote}</span>
+                </div>
+                <div class="text-[11px] text-dark-muted">Estimated ~$${Math.round((stay.price * 2) / 6)}/person for 2 nights</div>
+              </div>
+
+              <button onclick="voteStay('${stay.id}')" class="px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm transition-all shadow-sm flex items-center gap-2 ${stay.voted ? 'bg-terracotta text-white' : 'bg-[#191C21] hover:bg-terracotta text-white'}">
+                <span>🗳️</span>
+                <span>${stay.voted ? 'You Voted!' : 'Vote for this'} (${stay.votes})</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+
+      renderComparison();
+      renderLeaderboard();
+    }
+
+    function renderComparison() {
+      document.getElementById('comparisonTableContainer').innerHTML = `
+        <table class="w-full text-left text-xs sm:text-sm border-collapse">
+          <thead>
+            <tr class="border-b-2 border-[#191C21]/15">
+              <th class="py-4 px-4 font-serif font-bold text-base text-[#191C21]">Criteria</th>
+              ${STAYS.map(s => `<th class="py-4 px-4 font-serif font-bold text-base text-[#191C21] min-w-[200px]">${s.name}</th>`).join('')}
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[#191C21]/10">
+            <tr>
+              <td class="py-3 px-4 font-semibold text-dark-muted">Nightly Rate</td>
+              ${STAYS.map(s => `<td class="py-3 px-4 font-serif font-bold text-lg text-[#191C21]">$${s.price} <span class="text-xs font-normal text-dark-muted">${s.unitNote}</span></td>`).join('')}
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-semibold text-dark-muted">🔥 BBQ Deal</td>
+              ${STAYS.map(s => `<td class="py-3 px-4 font-bold text-xs"><span class="px-2.5 py-1 rounded-full ${s.hasFreeBbq ? 'bg-matcha-light text-[#191C21]' : 'bg-terracotta-soft text-terracotta'}">${s.bbqText}</span></td>`).join('')}
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-semibold text-dark-muted">Capacity & Beds</td>
+              ${STAYS.map(s => `<td class="py-3 px-4">👥 ${s.capacity}<br>🛏️ ${s.beds}</td>`).join('')}
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-semibold text-dark-muted">Location</td>
+              ${STAYS.map(s => `<td class="py-3 px-4">📍 ${s.location}</td>`).join('')}
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-semibold text-dark-muted">TikTok Video Review</td>
+              ${STAYS.map(s => `<td class="py-3 px-4"><a href="${s.tiktokUrl}" target="_blank" class="inline-flex items-center gap-1 font-bold text-xs bg-[#191C21] text-white px-3 py-1 rounded-full"><span>🎵 ${s.tiktok} ↗</span></a></td>`).join('')}
+            </tr>
+            <tr>
+              <td class="py-3 px-4 font-semibold text-dark-muted">Crew Votes</td>
+              ${STAYS.map(s => `<td class="py-3 px-4"><button onclick="voteStay('${s.id}')" class="px-4 py-1.5 rounded-full font-bold text-xs ${s.voted ? 'bg-terracotta text-white' : 'bg-[#FAF5ED] hover:bg-terracotta hover:text-white border border-[#191C21]/15'}">🗳️ Vote (${s.votes})</button></td>`).join('')}
+            </tr>
+          </tbody>
+        </table>
+      `;
+    }
+
+    function renderLeaderboard() {
+      const sorted = [...STAYS].sort((a, b) => b.votes - a.votes);
+      const total = STAYS.reduce((sum, s) => sum + s.votes, 0) || 1;
+      const medals = ['🥇', '🥈', '🥉'];
+
+      document.getElementById('leaderboardList').innerHTML = sorted.map((stay, idx) => {
+        const pct = Math.round((stay.votes / total) * 100);
+        return `
+          <div class="bg-white p-4 sm:p-5 rounded-2xl border border-[#191C21]/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
+            <div class="flex items-center gap-4 flex-1">
+              <div class="w-9 h-9 rounded-full bg-[#FAF5ED] border border-[#191C21]/15 flex items-center justify-center text-base shrink-0">
+                ${medals[idx]}
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="font-serif font-bold text-lg text-[#191C21]">${stay.name}</span>
+                  <span class="text-xs font-bold text-terracotta">${stay.votes} votes (${pct}%)</span>
+                </div>
+                <div class="w-full h-2.5 bg-[#FAF5ED] rounded-full overflow-hidden border border-[#191C21]/10">
+                  <div class="h-full bg-matcha rounded-full transition-all duration-500" style="width: ${pct}%"></div>
+                </div>
+              </div>
+            </div>
+            <button onclick="voteStay('${stay.id}')" class="px-5 py-2 rounded-full font-bold text-xs shrink-0 ${stay.voted ? 'bg-terracotta text-white' : 'bg-[#191C21] text-white hover:bg-terracotta'}">
+              ${stay.voted ? '✓ Voted' : '+ Cast Vote'}
+            </button>
+          </div>
+        `;
+      }).join('');
+    }
+
+    const DB_URL_STORAGE_KEY = 'kampot_trip_firebase_url';
+    const USER_VOTED_KEY = 'kampot_trip_voted_stay_id';
+
+    let firebaseUrl = localStorage.getItem(DB_URL_STORAGE_KEY) || '';
+    let eventSource = null;
+
+    const broadcastChannel = typeof BroadcastChannel !== 'undefined' 
+      ? new BroadcastChannel('kampot_live_votes_channel') 
+      : null;
+
+    if (broadcastChannel) {
+      broadcastChannel.onmessage = (e) => {
+        if (e.data && e.data.type === 'VOTES_UPDATED') {
+          applyIncomingVotes(e.data.votes);
+        }
+      };
+    }
+
+    function applyIncomingVotes(votesMap) {
+      if (!votesMap || typeof votesMap !== 'object') return;
+      let changed = false;
+      STAYS.forEach(s => {
+        if (typeof votesMap[s.id] === 'number' && s.votes !== votesMap[s.id]) {
+          s.votes = votesMap[s.id];
+          changed = true;
+        }
+      });
+      if (changed) {
+        renderStays();
+      }
+    }
+
+    function connectFirebaseStream() {
+      if (eventSource) {
+        eventSource.close();
+        eventSource = null;
+      }
+      renderCloudBadge();
+      if (!firebaseUrl) return;
+
+      try {
+        const cleanUrl = firebaseUrl.replace(/\/+$/, '');
+        const streamUrl = `${cleanUrl}/votes.json`;
+        eventSource = new EventSource(streamUrl);
+
+        eventSource.addEventListener('put', (event) => {
+          try {
+            const payload = JSON.parse(event.data);
+            if (payload && payload.path === '/') {
+              if (payload.data && typeof payload.data === 'object') {
+                applyIncomingVotes(payload.data);
+              }
+            } else if (payload && payload.path) {
+              const stayKey = payload.path.replace(/^\//, '');
+              if (stayKey && typeof payload.data === 'number') {
+                applyIncomingVotes({ [stayKey]: payload.data });
+              }
+            }
+          } catch (e) {}
+        });
+
+        // Initial fetch
+        fetch(streamUrl)
+          .then(res => res.json())
+          .then(data => {
+            if (data && typeof data === 'object') {
+              applyIncomingVotes(data);
+            }
+          })
+          .catch(() => {});
+      } catch (err) {
+        console.warn('Firebase connection warning:', err);
+      }
+    }
+
+    async function syncVoteToCloud(stayId, count) {
+      // Broadcast to other open tabs on this device
+      if (broadcastChannel) {
+        const votesObj = {};
+        STAYS.forEach(s => { votesObj[s.id] = s.votes; });
+        broadcastChannel.postMessage({ type: 'VOTES_UPDATED', votes: votesObj });
+      }
+
+      if (!firebaseUrl) return;
+
+      try {
+        const cleanUrl = firebaseUrl.replace(/\/+$/, '');
+        await fetch(`${cleanUrl}/votes/${stayId}.json`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(count)
+        });
+      } catch (err) {
+        console.warn('Could not sync to cloud:', err);
+      }
+    }
+
+    async function voteStay(id) {
+      const stay = STAYS.find(s => s.id === id);
+      if (!stay) return;
+
+      const previouslyVotedId = localStorage.getItem(USER_VOTED_KEY);
+      const isAdding = !stay.voted;
+
+      // If switching vote, remove previous vote first
+      if (isAdding && previouslyVotedId && previouslyVotedId !== id) {
+        const prevStay = STAYS.find(s => s.id === previouslyVotedId);
+        if (prevStay) {
+          prevStay.voted = false;
+          prevStay.votes = Math.max(0, prevStay.votes - 1);
+          syncVoteToCloud(previouslyVotedId, prevStay.votes);
+        }
+      }
+
+      stay.voted = isAdding;
+      stay.votes = isAdding ? stay.votes + 1 : Math.max(0, stay.votes - 1);
+
+      if (isAdding) {
+        localStorage.setItem(USER_VOTED_KEY, id);
+      } else {
+        localStorage.removeItem(USER_VOTED_KEY);
+      }
+
+      showToast(isAdding ? `🎉 Live vote cast for ${stay.name}!` : `Vote removed from ${stay.name}`);
+      renderStays();
+
+      syncVoteToCloud(id, stay.votes);
+    }
+
+    function openCloudModal() {
+      const modal = document.getElementById('cloudModal');
+      const input = document.getElementById('cloudDbUrlInput');
+      const btnDisconnect = document.getElementById('btnDisconnectCloud');
+      input.value = firebaseUrl || '';
+      btnDisconnect.classList.toggle('hidden', !firebaseUrl);
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeCloudModal() {
+      const modal = document.getElementById('cloudModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function saveCloudUrl() {
+      const input = document.getElementById('cloudDbUrlInput');
+      const newUrl = input.value.trim().replace(/\/+$/, '');
+      firebaseUrl = newUrl;
+      if (newUrl) {
+        localStorage.setItem(DB_URL_STORAGE_KEY, newUrl);
+        showToast('✅ Firebase Realtime DB connected live!');
+      } else {
+        localStorage.removeItem(DB_URL_STORAGE_KEY);
+      }
+      closeCloudModal();
+      connectFirebaseStream();
+    }
+
+    function disconnectCloudUrl() {
+      firebaseUrl = '';
+      localStorage.removeItem(DB_URL_STORAGE_KEY);
+      if (eventSource) {
+        eventSource.close();
+        eventSource = null;
+      }
+      closeCloudModal();
+      renderCloudBadge();
+      showToast('Disconnected cloud sync');
+    }
+
+    function renderCloudBadge() {
+      const container = document.getElementById('cloudSyncBadgeContainer');
+      if (!container) return;
+      if (firebaseUrl) {
+        container.innerHTML = `
+          <button onclick="openCloudModal()" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-bold shadow-sm transition-all" title="Click to manage Firebase Realtime DB">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>🟢 Cloud Live Sync: Active</span>
+            <span class="text-[11px] opacity-70">⚙️</span>
+          </button>
+        `;
+      } else {
+        container.innerHTML = `
+          <button onclick="openCloudModal()" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold shadow-sm transition-all">
+            <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+            <span>☁️ Connect Firebase DB</span>
+          </button>
+        `;
+      }
+    }
+
+    document.getElementById('btnCopyShare').onclick = () => {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(window.location.href);
+        showToast('📋 Trip link copied to clipboard!');
+      }
+    };
+
+    document.getElementById('btnDownload').onclick = () => {
+      let text = `========================================\n🌴 KAMPOT ROAD TRIP STAY SELECTION 🌴\n========================================\n\n`;
+      STAYS.forEach((s, idx) => {
+        text += `${idx + 1}. ${s.name} (${s.categoryLabel})\n   Rate: $${s.price} ${s.unitNote} · BBQ: ${s.bbqText}\n   TikTok: ${s.tiktokUrl}\n   Capacity: ${s.capacity} · Beds: ${s.beds}\n\n`;
+      });
+      const blob = new Blob([text], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'kampot-stays.txt';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('📥 Summary downloaded!');
+    };
+
+    // Restore device vote status
+    const savedUserVote = localStorage.getItem(USER_VOTED_KEY);
+    if (savedUserVote) {
+      const match = STAYS.find(s => s.id === savedUserVote);
+      if (match) match.voted = true;
+    }
+
+    renderStays();
+    connectFirebaseStream();
+  </script>
+</body>
+</html>
